@@ -36,6 +36,8 @@
             this.btnAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddClass = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddFaculty = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudent)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +90,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAdd,
+            this.btnAddClass,
+            this.btnAddFaculty,
             this.btnDelete,
             this.btnStatistic});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -114,6 +118,18 @@
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.Size = new System.Drawing.Size(69, 20);
             this.btnStatistic.Text = "STATISTIC";
+            // 
+            // btnAddClass
+            // 
+            this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.Size = new System.Drawing.Size(80, 20);
+            this.btnAddClass.Text = "ADD CLASS";
+            // 
+            // btnAddFaculty
+            // 
+            this.btnAddFaculty.Name = "btnAddFaculty";
+            this.btnAddFaculty.Size = new System.Drawing.Size(93, 20);
+            this.btnAddFaculty.Text = "ADD FACULTY";
             // 
             // IndexForm
             // 
@@ -148,6 +164,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnAdd;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;
         private System.Windows.Forms.ToolStripMenuItem btnStatistic;
+        private System.Windows.Forms.ToolStripMenuItem btnAddClass;
+        private System.Windows.Forms.ToolStripMenuItem btnAddFaculty;
 
     }
 }
