@@ -80,6 +80,7 @@
       <DependentUpon>Models.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="StudentManagement\ClassView.cs" />
     <Compile Include="StudentManagement\CreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
