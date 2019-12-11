@@ -10,17 +10,17 @@ namespace WindowsFormsApplication1.StudentManagement
     {
         public Student[] GetStudents()
         {
-            var db = new OOPServerEntities2();
+            var db = new OOPServicesEntities();
             return db.Students.ToArray();
         }
 
         public Student GetStudent(int id)
         {
-            var db = new OOPServerEntities2();
+            var db = new OOPServicesEntities();
             return db.Students.Find(id);
         }
 
-        public void CreateStudent(string code, string name, DateTime birthday, int class_id, string email, string hometown, string faculty)
+        public void CreateStudent(string code, string name, DateTime birthday, int class_id, string email, string hometown, int faculty)
         {
             var student = new Student();
             student.Code = code;
@@ -31,14 +31,14 @@ namespace WindowsFormsApplication1.StudentManagement
             student.Home_Town = hometown;
             student.Faculty_ID = faculty;
 
-            var db = new OOPServerEntities2();
+            var db = new OOPServicesEntities();
             db.Students.Add(student);
             db.SaveChanges();
         }
 
-        public void UpdateStudent(int id, string code, string name, DateTime birthday, int class_id, string email, string hometown, string faculty)
+        public void UpdateStudent(int id, string code, string name, DateTime birthday, int class_id, string email, string hometown, int faculty)
         {
-            var db = new OOPServerEntities2();
+            var db = new OOPServicesEntities();
             var student = db.Students.Find(id);
 
             student.Code = code;
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1.StudentManagement
 
         public void DeleteStudent(int id)
         {
-            var db = new OOPServerEntities2();
+            var db = new OOPServicesEntities();
             var student = db.Students.Find(id);
 
             db.Students.Remove(student);
@@ -63,12 +63,46 @@ namespace WindowsFormsApplication1.StudentManagement
         }
         public Class[] GetClasses()
         {
-            var db = new OOPServerEntities2();
+            var db = new OOPServicesEntities();
             return db.Classes.ToArray();
         }
-        public Faculty[] getFaculty()
+
+        public Class GetClass(int id)
         {
-            var db = new OOPServerEntities2();
+            var db = new OOPServicesEntities();
+            return db.Classes.Find(id);
+        }
+        public void DeleteClass(int id)
+        {
+            var db = new OOPServicesEntities();
+            var @class = db.Classes.Find(id);
+
+            db.Classes.Remove(@class);
+            db.SaveChanges();
+        } 
+        public Faculty[] getFacultyes()
+        {
+            var db = new OOPServicesEntities();
+            return db.Faculties.ToArray();
+        }
+
+        public Faculty GetFaculty(int id)
+        {
+            var db = new OOPServicesEntities();
+            return db.Faculties.Find(id);
+        }
+
+        public void DeleteFacuty(int id)
+        {
+            var db = new OOPServicesEntities();
+            var @Faculty = db.Faculties.Find(id);
+
+            db.Faculties.Remove(@Faculty);
+            db.SaveChanges();
+        }
+        public Faculty[] getStatistics()
+        {
+            var db = new OOPServicesEntities();
             return db.Faculties.ToArray();
         }
     }

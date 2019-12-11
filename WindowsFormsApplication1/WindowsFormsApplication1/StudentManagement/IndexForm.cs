@@ -28,6 +28,20 @@ namespace WindowsFormsApplication1.StudentManagement
             this.txtSearch.Leave += TxtSearch_Leave;
             this.txtSearch.Enter += TxtSearch_Enter;
             this.btnSearch.Click += BtnSearch_Click;
+            this.btnAddClass.Click += BtnAddClass_Click;
+            this.btnAddFaculty.Click += BtnAddFaculty_Click;
+        }
+
+        private void BtnAddFaculty_Click(object sender, EventArgs e)
+        {
+            new CreateFacultyForm().ShowDialog();
+            this.ShowAllStudent();
+        }
+
+        private void BtnAddClass_Click(object sender, EventArgs e)
+        {
+            new CreateClassForm().ShowDialog();
+            this.ShowAllStudent(); 
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -111,12 +125,20 @@ namespace WindowsFormsApplication1.StudentManagement
 
         private void ShowAllStudent()
         {
-            // this.grdStudent.DataSource = this.Business.GetStudents();
             var students = this.Business.GetStudents();
             var studentViews = new StudentView[students.Length];
             for (int i = 0; i < students.Length; i++)
                 studentViews[i] = new StudentView(students[i]);
             this.grdStudent.DataSource = studentViews;
+
+            this.grdStudent.Columns[0].HeaderText = "ID";
+            this.grdStudent.Columns[1].HeaderText = "Student Code";
+            this.grdStudent.Columns[2].HeaderText = "Full name";
+            this.grdStudent.Columns[3].HeaderText = "Date of Birth";
+            this.grdStudent.Columns[4].HeaderText = "Class";
+            this.grdStudent.Columns[5].HeaderText = "Email";
+            this.grdStudent.Columns[6].HeaderText = "Home Town";
+            this.grdStudent.Columns[7].HeaderText = "Faculty ID";
         }
         void IndexForm_Load(object sender, EventArgs e)
         {

@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1.StudentManagement
         public int Class_id { get; set; }
         public string Email { get; set; }
         public string Home_Town { get; set; }
-        public string Faculty_ID { get; set; }
+        public Nullable<int> Faculty_ID { get; set; }
     
         public virtual Class Class { get; set; }
         public virtual Faculty Faculty { get; set; }

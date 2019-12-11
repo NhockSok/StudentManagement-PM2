@@ -14,6 +14,7 @@ namespace WindowsFormsApplication1.StudentManagement
     
     public partial class Class
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Class()
         {
             this.Students = new HashSet<Student>();
@@ -22,6 +23,7 @@ namespace WindowsFormsApplication1.StudentManagement
         public int Id { get; set; }
         public string Name { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
     }
 }

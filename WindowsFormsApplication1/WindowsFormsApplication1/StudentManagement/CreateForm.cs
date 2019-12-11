@@ -28,16 +28,23 @@ namespace WindowsFormsApplication1.StudentManagement
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            var code = this.txtCode.Text;
-            var name = this.txtName.Text;
-            var birthday = this.dtpBirthday.Value;
-            var class_id = (int)this.cboClass.SelectedValue;
-            var email = this.txtEmail.Text;
-            var hometown = this.txtHometown.Text;
-            var faculty = (string)this.cboFaculty.SelectedValue;
-            this.Business.CreateStudent(code, name, birthday, class_id, email, hometown, faculty);
-            MessageBox.Show("Create student successfully");
-            this.Close();
+            if (checkData())
+            {
+                var code = this.txtCode.Text;
+                var name = this.txtName.Text;
+                var birthday = this.dtpBirthday.Value;
+                var class_id = (int)this.cboClass.SelectedValue;
+                var email = this.txtEmail.Text;
+                var hometown = this.txtHometown.Text;
+                var faculty = (int)this.cboFaculty.SelectedValue;
+                this.Business.CreateStudent(code, name, birthday, class_id, email, hometown, faculty);
+                MessageBox.Show("Create student successfully");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please check all information completely", "Note");
+            }
         }
 
         void CreateForm_Load(object sender, EventArgs e)
@@ -46,9 +53,38 @@ namespace WindowsFormsApplication1.StudentManagement
             this.cboClass.DisplayMember = "Name";
             this.cboClass.ValueMember = "id";
 
-            this.cboFaculty.DataSource = this.Business.getFaculty();
+            this.cboFaculty.DataSource = this.Business.getFacultyes();
             this.cboFaculty.DisplayMember = "Faculty_Name";
-            this.cboFaculty.ValueMember = "Faculty_ID";
+            this.cboFaculty.ValueMember = "id";
         }
+        public bool checkData()
+        {
+            if (string.IsNullOrWhiteSpace(txtCode.Text))
+            {
+                MessageBox.Show("You have not entered a student code", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCode.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("You have not entered a name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtName.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("You have not entered a email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtHometown.Text))
+            {
+                MessageBox.Show("You have not entered a home town", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHometown.Focus();
+                return false;
+            }
+            return true;
+        }
+
     }
 }

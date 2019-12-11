@@ -31,9 +31,9 @@ namespace WindowsFormsApplication1.StudentManagement
             this.cboClass.ValueMember = "id";
             this.cboClass.SelectedValue = student.Class_id;
 
-            this.cboFaculty.DataSource = this.Business.getFaculty();
+            this.cboFaculty.DataSource = this.Business.getFacultyes();
             this.cboFaculty.DisplayMember = "Faculty_Name";
-            this.cboFaculty.ValueMember = "Faculty_ID";
+            this.cboFaculty.ValueMember = "id";
             this.cboFaculty.SelectedValue = student.Faculty_ID;
         }
 
@@ -50,7 +50,7 @@ namespace WindowsFormsApplication1.StudentManagement
             var class_id = (int)this.cboClass.SelectedValue;
             var email = this.txtEmail.Text;
             var hometown = this.txtHometown.Text;
-            var faculty = (string)this.cboFaculty.SelectedValue;
+            var faculty = (int)this.cboFaculty.SelectedValue;
             this.Business.UpdateStudent(this.StudentId, code, name, birthday, class_id, email, hometown, faculty);
             MessageBox.Show("Update successfully");
             this.Close();

@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1.StudentManagement
         public string Class { get; set; }
         public string Email { get; set; }
         public string Home_Town { get; set; }
-        public string Faculty_ID { get; set; }
+        public string Faculty { get; set; }
         public StudentView(Student student)
         {
             this.Id = student.Id;
@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1.StudentManagement
             this.Class = student.Class.Name;
             this.Email = student.Email;
             this.Home_Town = student.Home_Town;
-            this.Faculty_ID = student.Faculty_ID;
+            this.Faculty = student.Faculty.Faculty_Name;
         }
     }
 }

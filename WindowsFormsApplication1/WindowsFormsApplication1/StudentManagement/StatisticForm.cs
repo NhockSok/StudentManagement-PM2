@@ -26,13 +26,15 @@ namespace WindowsFormsApplication1.StudentManagement
         }
         private void ShowAllFacullty()
         {
-            var faculty = this.Business.getFaculty();
-            var facultyviews = new FacultyView[faculty.Length];
+            var faculty = this.Business.getStatistics();
+            var facultyviews = new StatisticView[faculty.Length];
             for (int i = 0; i < facultyviews.Length; i++)
             {
-                facultyviews[i] = new FacultyView(faculty[i]);
+                facultyviews[i] = new StatisticView(faculty[i]);
             }
             grdStatistic.DataSource = facultyviews;
+            this.grdStatistic.Columns[0].HeaderText = "Faculty name";
+            this.grdStatistic.Columns[1].HeaderText = "Number of Student";
         }
 
     }

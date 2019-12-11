@@ -8,14 +8,13 @@ namespace WindowsFormsApplication1.StudentManagement
 {
     class FacultyView
     {
-        public string Faculty_ID { get; set; }
+        public int Id { get; set; }
         public string Faculty_Name { get; set; }
-        public int Number_of_Student { get; set; }
         public FacultyView(Faculty faculty)
         {
-            this.Faculty_ID = faculty.Faculty_ID;
+            this.Id = faculty.Id;
             this.Faculty_Name = faculty.Faculty_Name;
-            this.Number_of_Student = faculty.Students.Count;
+
         }
     }
 }

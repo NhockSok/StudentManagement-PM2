@@ -10,5 +10,10 @@ namespace WindowsFormsApplication1.StudentManagement
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public ClassView(Class classView)
+        {
+            this.Id = classView.Id;
+            this.Name = classView.Name;           
+        }
     }
 }

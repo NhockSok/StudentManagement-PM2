@@ -14,14 +14,16 @@ namespace WindowsFormsApplication1.StudentManagement
     
     public partial class Faculty
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Faculty()
         {
             this.Students = new HashSet<Student>();
         }
     
-        public string Faculty_ID { get; set; }
+        public int Id { get; set; }
         public string Faculty_Name { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
     }
 }
