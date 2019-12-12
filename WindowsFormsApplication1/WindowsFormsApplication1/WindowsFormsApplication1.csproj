@@ -122,6 +122,13 @@
       <DependentUpon>Models.edmx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="StudentManagement\SortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentManagement\SortForm.Designer.cs">
+      <DependentUpon>SortForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentManagement\SortView.cs" />
     <Compile Include="StudentManagement\StatisticView.cs" />
     <Compile Include="StudentManagement\IndexForm.cs">
       <SubType>Form</SubType>
@@ -167,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentManagement\IndexForm.resx">
       <DependentUpon>IndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentManagement\SortForm.resx">
+      <DependentUpon>SortForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentManagement\StatisticForm.resx">
       <DependentUpon>StatisticForm.cs</DependentUpon>

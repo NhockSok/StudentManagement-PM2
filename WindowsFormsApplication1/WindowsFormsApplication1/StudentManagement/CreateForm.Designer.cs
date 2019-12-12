@@ -44,6 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Code = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAverageScore = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cboFaculty
@@ -102,7 +104,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(227, 339);
+            this.btnCancel.Location = new System.Drawing.Point(216, 364);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
@@ -112,7 +114,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(108, 339);
+            this.btnSave.Location = new System.Drawing.Point(108, 364);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 28);
@@ -194,11 +196,29 @@
             this.Code.TabIndex = 66;
             this.Code.Text = "Code : ";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 320);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 17);
+            this.label7.TabIndex = 82;
+            this.label7.Text = "Average score : ";
+            // 
+            // txtAverageScore
+            // 
+            this.txtAverageScore.Location = new System.Drawing.Point(135, 320);
+            this.txtAverageScore.Name = "txtAverageScore";
+            this.txtAverageScore.Size = new System.Drawing.Size(262, 22);
+            this.txtAverageScore.TabIndex = 83;
+            // 
             // CreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 405);
+            this.Controls.Add(this.txtAverageScore);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cboFaculty);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtHometown);
@@ -217,12 +237,12 @@
             this.Controls.Add(this.Code);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
             this.Name = "CreateForm";
             this.Text = "CreateForm";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.MaximumSize = this.Size;
-            this.MinimumSize = this.Size;
 
         }
 
@@ -244,6 +264,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Code;
-
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtAverageScore;
     }
 }

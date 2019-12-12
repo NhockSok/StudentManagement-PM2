@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1.StudentManagement
         public string Email { get; set; }
         public string Home_Town { get; set; }
         public string Faculty { get; set; }
+        public double Average_Score { get; set; }
         public StudentView(Student student)
         {
             this.Id = student.Id;
@@ -26,6 +27,8 @@ namespace WindowsFormsApplication1.StudentManagement
             this.Email = student.Email;
             this.Home_Town = student.Home_Town;
             this.Faculty = student.Faculty.Faculty_Name;
+            this.Average_Score = student.Average_Score;
+
         }
     }
 }

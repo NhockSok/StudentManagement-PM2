@@ -51,7 +51,8 @@ namespace WindowsFormsApplication1.StudentManagement
             var email = this.txtEmail.Text;
             var hometown = this.txtHometown.Text;
             var faculty = (int)this.cboFaculty.SelectedValue;
-            this.Business.UpdateStudent(this.StudentId, code, name, birthday, class_id, email, hometown, faculty);
+            var averageScore = Double.Parse(this.txtAverageScore.Text);
+            this.Business.UpdateStudent(this.StudentId, code, name, birthday, class_id, email, hometown, faculty, averageScore);
             MessageBox.Show("Update successfully");
             this.Close();
         }

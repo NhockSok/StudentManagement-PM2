@@ -18,10 +18,12 @@ namespace WindowsFormsApplication1.StudentManagement
         public string Code { get; set; }
         public string Name { get; set; }
         public System.DateTime Birthday { get; set; }
+
         public int Class_id { get; set; }
         public string Email { get; set; }
         public string Home_Town { get; set; }
-        public Nullable<int> Faculty_ID { get; set; }
+        public int Faculty_ID { get; set; }
+        public double Average_Score { get; set; }
     
         public virtual Class Class { get; set; }
         public virtual Faculty Faculty { get; set; }

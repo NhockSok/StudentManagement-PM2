@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1.StudentManagement
     public partial class IndexForm : Form
     {
         private LogicLayer Business;
-        private Student studentview;
+        //private Student studentview;
         public IndexForm()
         {
             InitializeComponent();
@@ -30,6 +30,13 @@ namespace WindowsFormsApplication1.StudentManagement
             this.btnSearch.Click += BtnSearch_Click;
             this.btnAddClass.Click += BtnAddClass_Click;
             this.btnAddFaculty.Click += BtnAddFaculty_Click;
+            this.btnSortForm.Click += BtnSortForm_Click;
+        }
+
+        private void BtnSortForm_Click(object sender, EventArgs e)
+        {
+            new SortForm().ShowDialog();
+            this.ShowAllStudent();
         }
 
         private void BtnAddFaculty_Click(object sender, EventArgs e)
@@ -139,6 +146,7 @@ namespace WindowsFormsApplication1.StudentManagement
             this.grdStudent.Columns[5].HeaderText = "Email";
             this.grdStudent.Columns[6].HeaderText = "Home Town";
             this.grdStudent.Columns[7].HeaderText = "Faculty ID";
+            this.grdStudent.Columns[8].HeaderText = "Average Score";
         }
         void IndexForm_Load(object sender, EventArgs e)
         {

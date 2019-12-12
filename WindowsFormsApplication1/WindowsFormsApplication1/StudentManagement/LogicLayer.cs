@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1.StudentManagement
             return db.Students.Find(id);
         }
 
-        public void CreateStudent(string code, string name, DateTime birthday, int class_id, string email, string hometown, int faculty)
+        public void CreateStudent(string code, string name, DateTime birthday, int class_id, string email, string hometown, int faculty, double averageScore)
         {
             var student = new Student();
             student.Code = code;
@@ -30,13 +30,14 @@ namespace WindowsFormsApplication1.StudentManagement
             student.Email = email;
             student.Home_Town = hometown;
             student.Faculty_ID = faculty;
+            student.Average_Score = averageScore;
 
             var db = new OOPServicesEntities();
             db.Students.Add(student);
             db.SaveChanges();
         }
 
-        public void UpdateStudent(int id, string code, string name, DateTime birthday, int class_id, string email, string hometown, int faculty)
+        public void UpdateStudent(int id, string code, string name, DateTime birthday, int class_id, string email, string hometown, int faculty, double averageScore)
         {
             var db = new OOPServicesEntities();
             var student = db.Students.Find(id);
@@ -47,7 +48,8 @@ namespace WindowsFormsApplication1.StudentManagement
             student.Class_id = class_id;
             student.Email = email;
             student.Home_Town = hometown;
-            student.Faculty_ID = faculty; ;
+            student.Faculty_ID = faculty;
+            student.Average_Score = averageScore;
 
             db.Entry(student).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
@@ -104,6 +106,11 @@ namespace WindowsFormsApplication1.StudentManagement
         {
             var db = new OOPServicesEntities();
             return db.Faculties.ToArray();
+        }
+        public Student[] getSort()
+        {
+            var db = new OOPServicesEntities();
+            return db.Students.ToArray();
         }
     }
 }

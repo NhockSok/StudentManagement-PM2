@@ -38,6 +38,7 @@
             this.btnAddFaculty = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSortForm = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdStudent)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +48,7 @@
             this.btnSearch.Location = new System.Drawing.Point(443, 425);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(257, 41);
+            this.btnSearch.Size = new System.Drawing.Size(152, 41);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -92,7 +93,8 @@
             this.btnAddClass,
             this.btnAddFaculty,
             this.btnDelete,
-            this.btnStatistic});
+            this.btnStatistic,
+            this.btnSortForm});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -130,6 +132,12 @@
             this.btnStatistic.Size = new System.Drawing.Size(88, 24);
             this.btnStatistic.Text = "STATISTIC";
             // 
+            // btnSortForm
+            // 
+            this.btnSortForm.Name = "btnSortForm";
+            this.btnSortForm.Size = new System.Drawing.Size(175, 24);
+            this.btnSortForm.Text = "SORT SCORE STUDENT";
+            // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,7 +148,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grdStudent);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
@@ -166,6 +174,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnStatistic;
         private System.Windows.Forms.ToolStripMenuItem btnAddClass;
         private System.Windows.Forms.ToolStripMenuItem btnAddFaculty;
-
+        private System.Windows.Forms.ToolStripMenuItem btnSortForm;
     }
 }
