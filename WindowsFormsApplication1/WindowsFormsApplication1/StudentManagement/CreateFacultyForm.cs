@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1.StudentManagement
 
         private void BtnDeleteFaculty_Click(object sender, EventArgs e)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             string facultyname = this.grdFaculty.CurrentRow.Cells[0].Value.ToString();
             DialogResult dr = MessageBox.Show("Are you sure to delete this", "Confirm", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1.StudentManagement
         {
             try
             {
-                var db = new OOPServicesEntities();
+                var db = new OOPServerEntities3();
                 string facultyname = this.grdFaculty.CurrentRow.Cells[0].Value.ToString();
                 Faculty faculty = db.Faculties.Single(x => x.Faculty_Name.Equals(facultyname));
                 faculty.Faculty_Name = this.txtFacultyName.Text;
@@ -72,7 +72,7 @@ namespace WindowsFormsApplication1.StudentManagement
         {
             try
             {
-                var db = new OOPServicesEntities();
+                var db = new OOPServerEntities3();
                 Faculty faculty = new Faculty();
                 faculty.Faculty_Name = this.txtFacultyName.Text;
                 db.Faculties.Add(faculty);
@@ -88,7 +88,7 @@ namespace WindowsFormsApplication1.StudentManagement
 
         private void GrdFaculty_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             string Facultyname = this.grdFaculty.CurrentRow.Cells[0].Value.ToString();
             Faculty faculty = db.Faculties.Single(x => x.Faculty_Name.Equals(Facultyname));
             this.txtFacultyName.Text = faculty.Faculty_Name;
@@ -100,7 +100,7 @@ namespace WindowsFormsApplication1.StudentManagement
         }
         private void LoadAllFaculty()
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             this.grdFaculty.DataSource = db.Faculties.Select(x => new
             {
                 FacultyName = x.Faculty_Name

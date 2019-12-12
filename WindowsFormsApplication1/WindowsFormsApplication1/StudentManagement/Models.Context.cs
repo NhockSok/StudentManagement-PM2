@@ -13,10 +13,10 @@ namespace WindowsFormsApplication1.StudentManagement
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OOPServicesEntities : DbContext
+    public partial class OOPServerEntities3 : DbContext
     {
-        public OOPServicesEntities()
-            : base("name=OOPServicesEntities")
+        public OOPServerEntities3()
+            : base("name=OOPServerEntities3")
         {
         }
     

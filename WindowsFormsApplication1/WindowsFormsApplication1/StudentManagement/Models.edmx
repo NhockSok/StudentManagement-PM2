@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="OOPServicesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="OOPServerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Class">
           <Key>
             <PropertyRef Name="Id" />
@@ -33,7 +33,7 @@
           <Property Name="Faculty ID" Type="int" />
           <Property Name="Average Score" Type="float" />
         </EntityType>
-        <Association Name="FK__Student__Class_i__276EDEB3">
+        <Association Name="FK__Student__Class_i__145C0A3F">
           <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
           <ReferentialConstraint>
@@ -45,7 +45,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Student__Faculty__286302EC">
+        <Association Name="FK__Student__Faculty__15502E78">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
           <ReferentialConstraint>
@@ -57,30 +57,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="OOPServicesModelStoreContainer">
+        <EntityContainer Name="OOPServerModelStoreContainer">
           <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Faculty" EntityType="Self.Faculty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Student__Class_i__276EDEB3" Association="Self.FK__Student__Class_i__276EDEB3">
+          <AssociationSet Name="FK__Student__Class_i__145C0A3F" Association="Self.FK__Student__Class_i__145C0A3F">
             <End Role="Class" EntitySet="Class" />
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
-          <AssociationSet Name="FK__Student__Faculty__286302EC" Association="Self.FK__Student__Faculty__286302EC">
+          <AssociationSet Name="FK__Student__Faculty__15502E78" Association="Self.FK__Student__Faculty__15502E78">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="OOPServicesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="OOPServerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Class">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Students" Relationship="Self.FK__Student__Class_i__276EDEB3" FromRole="Class" ToRole="Student" />
+          <NavigationProperty Name="Students" Relationship="Self.FK__Student__Class_i__145C0A3F" FromRole="Class" ToRole="Student" />
         </EntityType>
         <EntityType Name="Faculty">
           <Key>
@@ -88,7 +89,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Faculty_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Students" Relationship="Self.FK__Student__Faculty__286302EC" FromRole="Faculty" ToRole="Student" />
+          <NavigationProperty Name="Students" Relationship="Self.FK__Student__Faculty__15502E78" FromRole="Faculty" ToRole="Student" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -102,11 +103,11 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Home_Town" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Faculty_ID" Type="Int32" />
-          <NavigationProperty Name="Class" Relationship="Self.FK__Student__Class_i__276EDEB3" FromRole="Student" ToRole="Class" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__Student__Faculty__286302EC" FromRole="Student" ToRole="Faculty" />
           <Property Name="Average_Score" Type="Double" />
+          <NavigationProperty Name="Class" Relationship="Self.FK__Student__Class_i__145C0A3F" FromRole="Student" ToRole="Class" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__Student__Faculty__15502E78" FromRole="Student" ToRole="Faculty" />
         </EntityType>
-        <Association Name="FK__Student__Class_i__276EDEB3">
+        <Association Name="FK__Student__Class_i__145C0A3F">
           <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
           <ReferentialConstraint>
@@ -118,7 +119,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Student__Faculty__286302EC">
+        <Association Name="FK__Student__Faculty__15502E78">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
           <ReferentialConstraint>
@@ -130,15 +131,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="OOPServicesEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="OOPServerEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Classes" EntityType="Self.Class" />
           <EntitySet Name="Faculties" EntityType="Self.Faculty" />
           <EntitySet Name="Students" EntityType="Self.Student" />
-          <AssociationSet Name="FK__Student__Class_i__276EDEB3" Association="Self.FK__Student__Class_i__276EDEB3">
+          <AssociationSet Name="FK__Student__Class_i__145C0A3F" Association="Self.FK__Student__Class_i__145C0A3F">
             <End Role="Class" EntitySet="Classes" />
             <End Role="Student" EntitySet="Students" />
           </AssociationSet>
-          <AssociationSet Name="FK__Student__Faculty__286302EC" Association="Self.FK__Student__Faculty__286302EC">
+          <AssociationSet Name="FK__Student__Faculty__15502E78" Association="Self.FK__Student__Faculty__15502E78">
             <End Role="Faculty" EntitySet="Faculties" />
             <End Role="Student" EntitySet="Students" />
           </AssociationSet>
@@ -148,9 +149,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OOPServicesModelStoreContainer" CdmEntityContainer="OOPServicesEntities">
+        <EntityContainerMapping StorageEntityContainer="OOPServerModelStoreContainer" CdmEntityContainer="OOPServerEntities3">
           <EntitySetMapping Name="Classes">
-            <EntityTypeMapping TypeName="OOPServicesModel.Class">
+            <EntityTypeMapping TypeName="OOPServerModel.Class">
               <MappingFragment StoreEntitySet="Class">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -158,7 +159,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Faculties">
-            <EntityTypeMapping TypeName="OOPServicesModel.Faculty">
+            <EntityTypeMapping TypeName="OOPServerModel.Faculty">
               <MappingFragment StoreEntitySet="Faculty">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Faculty_Name" ColumnName="Faculty Name" />
@@ -166,9 +167,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="OOPServicesModel.Student">
+            <EntityTypeMapping TypeName="OOPServerModel.Student">
               <MappingFragment StoreEntitySet="Student">
-                <ScalarProperty Name="Average_Score" ColumnName="Average Score" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -177,6 +177,7 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Home_Town" ColumnName="Home Town" />
                 <ScalarProperty Name="Faculty_ID" ColumnName="Faculty ID" />
+                <ScalarProperty Name="Average_Score" ColumnName="Average Score" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

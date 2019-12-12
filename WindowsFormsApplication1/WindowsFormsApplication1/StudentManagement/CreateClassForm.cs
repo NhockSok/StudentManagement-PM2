@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1.StudentManagement
 
         private void BtnDeleteClass_Click(object sender, EventArgs e)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             string classname = this.grdClass.CurrentRow.Cells[0].Value.ToString();
             DialogResult dr = MessageBox.Show("Are you sure to delete this", "Confirm", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1.StudentManagement
         {
             try
             {
-                var db = new OOPServicesEntities();
+                var db = new OOPServerEntities3();
                 string classname = this.grdClass.CurrentRow.Cells[0].Value.ToString();
                 Class @class = db.Classes.Single(x => x.Name.Equals(classname));
                 @class.Name = this.txtClassName.Text;
@@ -73,7 +73,7 @@ namespace WindowsFormsApplication1.StudentManagement
         {
             try
             {
-                var db = new OOPServicesEntities();
+                var db = new OOPServerEntities3();
                 Class @class = new Class();
                 @class.Name = this.txtClassName.Text;
                 db.Classes.Add(@class);
@@ -89,7 +89,7 @@ namespace WindowsFormsApplication1.StudentManagement
 
         private void GrdClass_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             string classname = this.grdClass.CurrentRow.Cells[0].Value.ToString();
             Class @class = db.Classes.Single(x => x.Name.Equals(classname));
             this.txtClassName.Text = @class.Name;
@@ -101,7 +101,7 @@ namespace WindowsFormsApplication1.StudentManagement
         }
         private void LoadAllClass()
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             this.grdClass.DataSource = db.Classes.Select(x => new
             {
                 Name = x.Name

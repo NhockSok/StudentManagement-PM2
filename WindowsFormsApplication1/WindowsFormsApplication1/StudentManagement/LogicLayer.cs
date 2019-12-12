@@ -10,13 +10,13 @@ namespace WindowsFormsApplication1.StudentManagement
     {
         public Student[] GetStudents()
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Students.ToArray();
         }
 
         public Student GetStudent(int id)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Students.Find(id);
         }
 
@@ -32,14 +32,14 @@ namespace WindowsFormsApplication1.StudentManagement
             student.Faculty_ID = faculty;
             student.Average_Score = averageScore;
 
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             db.Students.Add(student);
             db.SaveChanges();
         }
 
         public void UpdateStudent(int id, string code, string name, DateTime birthday, int class_id, string email, string hometown, int faculty, double averageScore)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             var student = db.Students.Find(id);
 
             student.Code = code;
@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1.StudentManagement
 
         public void DeleteStudent(int id)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             var student = db.Students.Find(id);
 
             db.Students.Remove(student);
@@ -65,18 +65,18 @@ namespace WindowsFormsApplication1.StudentManagement
         }
         public Class[] GetClasses()
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Classes.ToArray();
         }
 
         public Class GetClass(int id)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Classes.Find(id);
         }
         public void DeleteClass(int id)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             var @class = db.Classes.Find(id);
 
             db.Classes.Remove(@class);
@@ -84,19 +84,19 @@ namespace WindowsFormsApplication1.StudentManagement
         } 
         public Faculty[] getFacultyes()
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Faculties.ToArray();
         }
 
         public Faculty GetFaculty(int id)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Faculties.Find(id);
         }
 
         public void DeleteFacuty(int id)
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             var @Faculty = db.Faculties.Find(id);
 
             db.Faculties.Remove(@Faculty);
@@ -104,12 +104,12 @@ namespace WindowsFormsApplication1.StudentManagement
         }
         public Faculty[] getStatistics()
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Faculties.ToArray();
         }
         public Student[] getSort()
         {
-            var db = new OOPServicesEntities();
+            var db = new OOPServerEntities3();
             return db.Students.ToArray();
         }
     }
